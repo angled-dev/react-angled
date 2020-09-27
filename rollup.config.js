@@ -1,5 +1,5 @@
 import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import resolve from "@rollup/plugin-node-resolve";
@@ -11,7 +11,7 @@ import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
 let tsconfig = {
-  compilerOptions: { declaration: true, jsx: "react", isolatedModules: false }
+  compilerOptions: { declaration: true, jsx: "react", isolatedModules: false },
 };
 
 export default {
@@ -20,22 +20,22 @@ export default {
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: pkg.module,
       format: "es",
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
     postcss({
       plugins: [],
       minimize: true,
-      sourceMap: "inline"
+      sourceMap: "inline",
     }),
     external({
-      includeDependencies: true
+      includeDependencies: true,
     }),
     url(),
     svgr(),
@@ -44,7 +44,7 @@ export default {
       rollupCommonJSResolveHack: true,
       exclude: ["**/__tests__/**", "**/pages/**"],
       clean: true,
-      tsconfigOverride: tsconfig
+      tsconfigOverride: tsconfig,
     }),
     babel({
       presets: ["react-app"],
@@ -53,12 +53,12 @@ export default {
         "@babel/plugin-proposal-optional-chaining",
         "@babel/plugin-syntax-dynamic-import",
         "@babel/plugin-proposal-class-properties",
-        "transform-react-remove-prop-types"
+        "transform-react-remove-prop-types",
       ],
       exclude: "node_modules/**",
-      runtimeHelpers: true
+      runtimeHelpers: true,
     }),
     commonjs(),
-    terser()
-  ]
+    terser(),
+  ],
 };

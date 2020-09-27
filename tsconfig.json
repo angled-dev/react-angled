@@ -29,7 +29,7 @@
   "exclude": [
     "src/components/__tests__",
     "src/components/**/*.stories.*",
-    "node_modules",
-    "build"
+    "node_modules/*",
+    "build/*"
   ]
 }
