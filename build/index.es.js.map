@@ -1,0 +1,1 @@
+{"version":3,"file":"index.es.js","sources":["../src/components/Example/index.tsx"],"sourcesContent":["import React from \"react\";\n\ninterface Props {}\n\nconst Example: React.FunctionComponent<Props> = () => (\n  <div role=\"heading\">My Component</div>\n);\n\nexport default Example;\n"],"names":["Example","React","role"],"mappings":"2BAIMA,EAA0C,IAC9CC,uBAAKC,KAAK"}
