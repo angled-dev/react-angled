@@ -1,5 +1,5 @@
 {
-  "version": "0.0.31",
+  "version": "0.0.34",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
@@ -7,8 +7,7 @@
     "build": "rollup -c",
     "storybook": "start-storybook",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "publish": "np"
+    "test:watch": "jest --watchAll"
   },
   "keywords": [],
   "license": "ISC",
@@ -30,7 +29,6 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "jest": "^26.4.2",
-    "np": "^6.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-typescript-rollup-npm": "^2.0.0",
