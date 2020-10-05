@@ -9726,6 +9726,14 @@ react-angled@^0.0.4:
   resolved "https://registry.yarnpkg.com/react-angled/-/react-angled-0.0.4.tgz#05658e27d0f96450a9a1023d6094363b4b670a1b"
   integrity sha512-27Zdq034e8aHTXmfHpjy5PDp/x3ql4+6PaDqqS+W6Ky85iWKaB5kQ0wVf+sk8Md9IVDn1Os4RsNuVhB318FbOw==
 
+react-angled@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-angled/-/react-angled-0.0.5.tgz#286794dbd36509be81673b982a06580e78610356"
+  integrity sha512-AVfgPVzkryf8MMKifN+RDPfizSZCDm30oybNMldhcZyzHdN6ivkxjLBr8WtxPsgIgVVhLob21iMhrXLtzYZ71Q==
+  dependencies:
+    next "^9.5.3"
+    react-angled "^0.0.4"
+
 react-color@^2.17.0:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.18.1.tgz#2cda8cc8e06a9e2c52ad391a30ddad31972472f4"
