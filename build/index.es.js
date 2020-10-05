@@ -1,4 +1,4 @@
-import e,{useState as o,useRef as t,useEffect as n,createContext as r,createElement as a}from"react";import i,{keyframes as s,css as c}from"styled-components";const l=()=>e.createElement("div",{role:"heading"},"My Component"),p={primary:"#333",secondary:"#808080",confirm:"rgba(80, 220, 100, 0.9)",cancel:"rgba(255, 40, 0, 0.8)",whitegrey:"#ececec",darkgrey:"#9c9c9c",overlay:"rgba(236,236,236, 0.8)",blue:"rgb(0, 128, 255)"},d={primary:p.secondary,secondary:p.primary},m=s`
+import e,{useState as o,useRef as t,useEffect as r,createContext as n,createElement as a}from"react";import i,{keyframes as s,css as c}from"styled-components";const l=()=>e.createElement("div",{role:"heading"},"My Component"),p={primary:"#333",secondary:"#808080",confirm:"rgba(80, 220, 100, 0.9)",cancel:"rgba(255, 40, 0, 0.8)",whitegrey:"#ececec",darkgrey:"#9c9c9c",overlay:"rgba(236,236,236, 0.8)",blue:"rgb(0, 128, 255)"},d={primary:p.secondary,secondary:p.primary},m=s`
   0% {
       background-position: 90%;
   }
@@ -77,7 +77,7 @@ import e,{useState as o,useRef as t,useEffect as n,createContext as r,createElem
       box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0);
     }
   }
-`,h=i((function({className:o,modalClassName:t,style:n,title:r,body:a,buttons:i,onAnimationEnd:s,passRef:c,visible:l,customHTML:p}){return e.createElement("div",{className:o+" "+t,style:n,onAnimationEnd:s,ref:c},l&&!p&&e.createElement(g,null,r),l&&!p&&e.createElement(x,null,a),l&&!p&&e.createElement(u,null,i),l&&p)})).withConfig({displayName:"Modal",componentId:"sc-1idweqk"})`
+`,h=i((function({className:o,modalClassName:t,style:r,title:n,body:a,buttons:i,onAnimationEnd:s,passRef:c,visible:l,customHTML:p}){return e.createElement("div",{className:o+" "+t,style:r,onAnimationEnd:s,ref:c},l&&!p&&e.createElement(g,null,n),l&&!p&&e.createElement(x,null,a),l&&!p&&e.createElement(u,null,i),l&&p)})).withConfig({displayName:"Modal",componentId:"sc-1idweqk"})`
   ${({customKeyframes:e})=>e||b};
   transition: height 0.25s, width 0.25s;
 
@@ -97,7 +97,7 @@ import e,{useState as o,useRef as t,useEffect as n,createContext as r,createElem
   background-image: linear-gradient(
     45deg,
     transparent 50%,
-    ${p.primary} 50%
+    ${({color:e})=>e||p.primary} 50%
   );
   background-position: 100%;
   background-size: 264%;
@@ -108,15 +108,15 @@ import e,{useState as o,useRef as t,useEffect as n,createContext as r,createElem
   align-content: stretch;
   position: relative;
   overflow-y: hidden;
-`,v=e.createContext({}),f=i(({visible:r,setProps:a,hide:i,callback:s,className:c,modalClassName:l,overlayClassName:p,height:d,width:m,position:g,title:x,body:u,buttons:b,duration:v,customHTML:f})=>{const[y,w]=o(!1),k=t(null);n(()=>{r?w(!0):v&&C()},[r]);const C=()=>{w(!1),s&&s(),a({})};return y?e.createElement("div",{className:c+" "+p,onClick:e=>{k&&k.current&&k.current.contains(e.target)||i()}},e.createElement(h,{style:{animation:""+(v?"fadeOut "+1*v+"ms linear":r?"fadeIn 1s ease-out":"fadeOut .4s ease-out")},title:x,body:u,buttons:b,onAnimationEnd:v?void 0:()=>{r||C()},passRef:k,height:d,width:m,position:g,modalClassName:l,customHTML:f,visible:r})):e.createElement(e.Fragment,null)}).withConfig({displayName:"Alert",componentId:"sc-sg0yid"})`
+`,v=e.createContext({}),f=i(({visible:n,setProps:a,hide:i,callback:s,className:c,modalClassName:l,overlayClassName:p,height:d,width:m,position:g,title:x,body:u,buttons:b,duration:v,customHTML:f,color:y})=>{const[w,k]=o(!1),C=t(null);r(()=>{n?k(!0):v&&N()},[n]);const N=()=>{k(!1),s&&s(),a({})};return w?e.createElement("div",{className:c+" "+p,onClick:e=>{C&&C.current&&C.current.contains(e.target)||i()}},e.createElement(h,{style:{animation:""+(v?"fadeOut "+1*v+"ms linear":n?"fadeIn 1s ease-out":"fadeOut .4s ease-out")},title:x,body:u,buttons:b,onAnimationEnd:v?void 0:()=>{n||N()},passRef:C,height:d,width:m,position:g,modalClassName:l,customHTML:f,visible:n,color:y})):e.createElement(e.Fragment,null)}).withConfig({displayName:"Alert",componentId:"sc-sg0yid"})`
   position: fixed;
   z-index: 999;
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
-  background-color: ${p.overlay};
-`;function y({children:t}){const[n,r]=o(!1),[a,i]=o({});var s;const c=()=>{r(!1)};return e.createElement(v.Provider,{value:{show:e=>{s&&clearTimeout(s),i(e),r(!0),e.duration&&(s=setTimeout(()=>c(),e.duration))},hide:c}},e.createElement(f,Object.assign({},Object.assign(Object.assign({},a),{visible:n,setProps:i,hide:c}))),t)}f.defaultProps={visible:!1,height:"350px",width:"500px"};const w=i(({className:o,children:t,onClick:n})=>e.createElement("button",{className:o,onClick:n},t)).withConfig({displayName:"Button",componentId:"sc-jkmrhb"})`
+  background-color: ${({overlayColor:e})=>e||p.overlay};
+`;function y({children:t}){const[r,n]=o(!1),[a,i]=o({});var s;const c=()=>{n(!1)};return e.createElement(v.Provider,{value:{show:e=>{s&&clearTimeout(s),i(e),n(!0),e.duration&&(s=setTimeout(()=>c(),e.duration))},hide:c}},e.createElement(f,Object.assign({},Object.assign(Object.assign({},a),{visible:r,setProps:i,hide:c}))),t)}f.defaultProps={visible:!1,height:"350px",width:"500px"};const w=i(({className:o,children:t,onClick:r})=>e.createElement("button",{className:o,onClick:r},t)).withConfig({displayName:"Button",componentId:"sc-jkmrhb"})`
   font-family: "Asap";
   font-weight: 700;
   font-size: 0.75rem;
@@ -159,7 +159,7 @@ import e,{useState as o,useRef as t,useEffect as n,createContext as r,createElem
     transition: background 100ms ease-in-out;
     background-position: 25%;
   }
-`;w.defaultProps={reverseColor:!1,variant:"primary"};var k={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},C=r&&r(k),N=function(){return(N=Object.assign||function(e){for(var o,t=1,n=arguments.length;t<n;t++)for(var r in o=arguments[t])Object.prototype.hasOwnProperty.call(o,r)&&(e[r]=o[r]);return e}).apply(this,arguments)},z=function(e,o){var t={};for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&o.indexOf(n)<0&&(t[n]=e[n]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var r=0;for(n=Object.getOwnPropertySymbols(e);r<n.length;r++)o.indexOf(n[r])<0&&(t[n[r]]=e[n[r]])}return t};function E(e){return e&&e.map((function(e,o){return a(e.tag,N({key:o},e.attr),E(e.child))}))}function O(e){return function(o){return a($,N({attr:N({},e.attr)},o),E(e.child))}}function $(e){var o=function(o){var t,n=e.size||o.size||"1em";o.className&&(t=o.className),e.className&&(t=(t?t+" ":"")+e.className);var r=e.attr,i=e.title,s=z(e,["attr","title"]);return a("svg",N({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},o.attr,r,s,{className:t,style:N({color:e.color||o.color},o.style,e.style),height:n,width:n,xmlns:"http://www.w3.org/2000/svg"}),i&&a("title",null,i),e.children)};return void 0!==C?a(C.Consumer,null,(function(e){return o(e)})):o(k)}const j=({icon:o,size:t,onClick:n,variant:r,color:a,hover:i})=>e.createElement(I,{onClick:n,variant:r,color:a,hover:i},e.createElement(o,{size:t})),I=i(({className:o,onClick:t,children:n})=>e.createElement("div",{className:o,onClick:t},n)).withConfig({displayName:"_IconButton",componentId:"sc-1qrr2qi"})`
+`;w.defaultProps={reverseColor:!1,variant:"primary"};var k={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},C=n&&n(k),N=function(){return(N=Object.assign||function(e){for(var o,t=1,r=arguments.length;t<r;t++)for(var n in o=arguments[t])Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n]);return e}).apply(this,arguments)},z=function(e,o){var t={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&o.indexOf(r)<0&&(t[r]=e[r]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var n=0;for(r=Object.getOwnPropertySymbols(e);n<r.length;n++)o.indexOf(r[n])<0&&(t[r[n]]=e[r[n]])}return t};function E(e){return e&&e.map((function(e,o){return a(e.tag,N({key:o},e.attr),E(e.child))}))}function O(e){return function(o){return a($,N({attr:N({},e.attr)},o),E(e.child))}}function $(e){var o=function(o){var t,r=e.size||o.size||"1em";o.className&&(t=o.className),e.className&&(t=(t?t+" ":"")+e.className);var n=e.attr,i=e.title,s=z(e,["attr","title"]);return a("svg",N({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},o.attr,n,s,{className:t,style:N({color:e.color||o.color},o.style,e.style),height:r,width:r,xmlns:"http://www.w3.org/2000/svg"}),i&&a("title",null,i),e.children)};return void 0!==C?a(C.Consumer,null,(function(e){return o(e)})):o(k)}const j=({icon:o,size:t,onClick:r,variant:n,color:a,hover:i})=>e.createElement(I,{onClick:r,variant:n,color:a,hover:i},e.createElement(o,{size:t})),I=i(({className:o,onClick:t,children:r})=>e.createElement("div",{className:o,onClick:t},r)).withConfig({displayName:"_IconButton",componentId:"sc-1qrr2qi"})`
   display: flex;
   align-items: center;
   color: ${({variant:e,color:o})=>o||p[e]};

@@ -29,6 +29,8 @@ type AlertProps = {
   callback?: Function;
   overlayClassName?: string;
   duration?: number;
+  color?: string;
+  overlayColor?: string;
 };
 
 const _Alert: FunctionComponent<AlertProps> = ({
@@ -47,6 +49,7 @@ const _Alert: FunctionComponent<AlertProps> = ({
   buttons,
   duration,
   customHTML,
+  color,
 }) => {
   const [render, setRender] = useState(false);
   const modal = useRef<HTMLInputElement>(null);
@@ -97,6 +100,7 @@ const _Alert: FunctionComponent<AlertProps> = ({
         modalClassName={modalClassName}
         customHTML={customHTML}
         visible={visible}
+        color={color}
       />
     </div>
   ) : (
@@ -111,7 +115,7 @@ const Alert = styled(_Alert)`
   width: 100vw;
   left: 0;
   top: 0;
-  background-color: ${colors.overlay};
+  background-color: ${({ overlayColor }) => overlayColor || colors.overlay};
 `;
 
 Alert.defaultProps = {

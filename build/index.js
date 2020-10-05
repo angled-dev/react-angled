@@ -97,7 +97,7 @@
   background-image: linear-gradient(
     45deg,
     transparent 50%,
-    ${n.primary} 50%
+    ${({color:e})=>e||n.primary} 50%
   );
   background-position: 100%;
   background-size: 264%;
@@ -108,14 +108,14 @@
   align-content: stretch;
   position: relative;
   overflow-y: hidden;
-`,m=a.default.createContext({}),x=r.default(({visible:t,setProps:o,hide:r,callback:n,className:i,modalClassName:s,overlayClassName:l,height:c,width:d,position:p,title:m,body:x,buttons:g,duration:b,customHTML:h})=>{const[f,v]=e.useState(!1),y=e.useRef(null);e.useEffect(()=>{t?v(!0):b&&w()},[t]);const w=()=>{v(!1),n&&n(),o({})};return f?a.default.createElement("div",{className:i+" "+l,onClick:e=>{y&&y.current&&y.current.contains(e.target)||r()}},a.default.createElement(u,{style:{animation:""+(b?"fadeOut "+1*b+"ms linear":t?"fadeIn 1s ease-out":"fadeOut .4s ease-out")},title:m,body:x,buttons:g,onAnimationEnd:b?void 0:()=>{t||w()},passRef:y,height:c,width:d,position:p,modalClassName:s,customHTML:h,visible:t})):a.default.createElement(a.default.Fragment,null)}).withConfig({displayName:"Alert",componentId:"sc-sg0yid"})`
+`,m=a.default.createContext({}),x=r.default(({visible:t,setProps:o,hide:r,callback:n,className:i,modalClassName:s,overlayClassName:l,height:c,width:d,position:p,title:m,body:x,buttons:g,duration:b,customHTML:h,color:f})=>{const[v,y]=e.useState(!1),w=e.useRef(null);e.useEffect(()=>{t?y(!0):b&&k()},[t]);const k=()=>{y(!1),n&&n(),o({})};return v?a.default.createElement("div",{className:i+" "+l,onClick:e=>{w&&w.current&&w.current.contains(e.target)||r()}},a.default.createElement(u,{style:{animation:""+(b?"fadeOut "+1*b+"ms linear":t?"fadeIn 1s ease-out":"fadeOut .4s ease-out")},title:m,body:x,buttons:g,onAnimationEnd:b?void 0:()=>{t||k()},passRef:w,height:c,width:d,position:p,modalClassName:s,customHTML:h,visible:t,color:f})):a.default.createElement(a.default.Fragment,null)}).withConfig({displayName:"Alert",componentId:"sc-sg0yid"})`
   position: fixed;
   z-index: 999;
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
-  background-color: ${n.overlay};
+  background-color: ${({overlayColor:e})=>e||n.overlay};
 `;x.defaultProps={visible:!1,height:"350px",width:"500px"};const g=r.default(({className:e,children:t,onClick:o})=>a.default.createElement("button",{className:e,onClick:o},t)).withConfig({displayName:"Button",componentId:"sc-jkmrhb"})`
   font-family: "Asap";
   font-weight: 700;

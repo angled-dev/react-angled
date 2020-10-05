@@ -39,6 +39,7 @@ type ModalProps = {
   visible: Boolean;
   customHTML?: any;
   position?: any;
+  color?: string;
 };
 
 function _Modal({
@@ -133,7 +134,7 @@ const Modal = styled(_Modal)`
   background-image: linear-gradient(
     45deg,
     transparent 50%,
-    ${colors.primary} 50%
+    ${({ color }) => color || colors.primary} 50%
   );
   background-position: 100%;
   background-size: 264%;
