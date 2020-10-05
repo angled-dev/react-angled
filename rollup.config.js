@@ -7,6 +7,9 @@ import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
 import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
+const createStyledComponentsTransformer = require("typescript-plugin-styled-components")
+  .default;
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 import pkg from "./package.json";
 
@@ -28,6 +31,7 @@ export default {
       sourcemap: true,
     },
   ],
+  external: ["styled-components", "react", "react-dom"],
   plugins: [
     postcss({
       plugins: [],
@@ -45,6 +49,11 @@ export default {
       exclude: ["**/__tests__/**", "**/pages/**"],
       clean: true,
       tsconfigOverride: tsconfig,
+      transformers: [
+        () => ({
+          before: [styledComponentsTransformer],
+        }),
+      ],
     }),
     babel({
       presets: ["react-app"],
