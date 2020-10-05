@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const ShowButton = () => {
-  const { show } = useContext(AlertContext);
+  const { show, courtain, hide } = useContext(AlertContext);
 
   const Button2 = () => (
     <Button
@@ -25,7 +25,7 @@ const ShowButton = () => {
         })
       }
     >
-      Show 2
+      Timed
     </Button>
   );
 
@@ -42,7 +42,7 @@ const ShowButton = () => {
         });
       }}
     >
-      Show 1
+      Primary
     </Button>
   );
 
@@ -50,6 +50,19 @@ const ShowButton = () => {
     <>
       <Button1 />
       <Button2 />
+      <Button
+        onClick={() => {
+          courtain({
+            children: (
+              <Button variant="secondary" onClick={() => hide()}>
+                Close
+              </Button>
+            ),
+          });
+        }}
+      >
+        Courtain
+      </Button>
     </>
   );
 };

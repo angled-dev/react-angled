@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef, FunctionComponent } from "react";
 import styled from "styled-components";
 import { colors } from "../../resources";
+import Courtain from "./Courtain";
 import Modal from "./Modal";
 
 type ContextProps = {
-  show: Function;
+  show: (props: ShowProps) => void;
   hide: Function;
+  courtain: (props: CourtainProps) => void;
 };
 
-const AlertContext = React.createContext<Partial<ContextProps>>({});
+export type CourtainProps = {
+  callback?: Function;
+  children?: any;
+};
 
-export default AlertContext;
-
-type AlertProps = {
+type ShowProps = {
   className?: string;
   modalClassName?: string;
   title?: any;
@@ -21,17 +24,20 @@ type AlertProps = {
   height?: string | number;
   width?: string | number;
   customKeyframes?: any;
-  visible: Boolean;
   customHTML?: any;
   position?: any;
-  setProps: Function;
-  hide: Function;
   callback?: Function;
   overlayClassName?: string;
   duration?: number;
   color?: string;
   overlayColor?: string;
 };
+
+interface AlertProps extends ShowProps {
+  visible: Boolean;
+  setProps: Function;
+  hide: Function;
+}
 
 const _Alert: FunctionComponent<AlertProps> = ({
   visible,
@@ -126,24 +132,46 @@ Alert.defaultProps = {
 
 export function AlertProvider({ children }) {
   const [visible, setVisible] = useState(false);
+  const [courtainVisible, setCourtainVisible] = useState(false);
   const [props, setProps] = useState({});
   var timer;
 
-  const show = (p) => {
+  const initialize = (p) => {
     if (timer) clearTimeout(timer);
     setProps(p);
+  };
+
+  const courtain = (p: CourtainProps) => {
+    initialize(p || {});
+    setCourtainVisible(true);
+    console.log(courtainVisible);
+  };
+
+  const show = (p: ShowProps) => {
+    initialize(p);
     setVisible(true);
     if (p.duration) timer = setTimeout(() => hide(), p.duration);
   };
 
   const hide = () => {
     setVisible(false);
+    setCourtainVisible(false);
   };
 
   return (
-    <AlertContext.Provider value={{ show, hide }}>
+    <AlertContext.Provider value={{ show, hide, courtain }}>
       <Alert {...{ ...props, ...{ visible, setProps, hide } }} />
+      <Courtain
+        {...{
+          ...props,
+          ...{ visible: courtainVisible, setVisible: setCourtainVisible },
+        }}
+      />
       {children}
     </AlertContext.Provider>
   );
 }
+
+const AlertContext = React.createContext<Partial<ContextProps>>({});
+
+export default AlertContext;
