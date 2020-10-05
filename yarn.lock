@@ -9719,10 +9719,10 @@ raw-loader@^4.0.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.5"
 
-react-angled@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/react-angled/-/react-angled-0.0.8.tgz#87b367839f71e6efcfb63cfcc0fb67c4191a5bd9"
-  integrity sha512-N26NNsuknhvEHsZUeDmtXlGigvnQ1ivT9S/pD4GhUyJH9E1MdYy+CSwWqyGXoalWoRQd6i3FRznNZd9UqAjrJw==
+react-angled@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-angled/-/react-angled-0.1.0.tgz#9bf7787addf4bf45d49c389606f7e308f0befd11"
+  integrity sha512-vRmsQfJFX9cg8WhuMqJHUPYMQyc6sNVQjEf5UT4Uek05w6Gbg2nNJtv/ngyoLSU2YPvbiyPZxurJQrd2RaUUvg==
   dependencies:
     "@storybook/addon-knobs" "^6.0.26"
 
