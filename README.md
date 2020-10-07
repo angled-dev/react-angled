@@ -4,10 +4,6 @@ Just another React component library.
 
 <h3><b>but</b></h3>
 
-<br/>
-<br/>
-<br/>
-
 <p align="center"><i>better</i></p>
 <p align="center" >|</p>
 <p align="center"><b>simpler</b></p>
