@@ -1,8 +1,8 @@
-# React Angled
+<h1>React Angled</h1>
 
 Just another React component library.
 
-<h2 ><b>but</b></h2>
+<h3><b>but</b></h3>
 
 <br/>
 <br/>
