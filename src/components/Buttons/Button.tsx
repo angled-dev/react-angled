@@ -4,7 +4,7 @@ import { colors, keyframe } from "../../resources";
 
 export type ButtonProps = {
   reverseColor?: boolean;
-  variant?: string;
+  variant?: "primary" | "secondary" | "confirm" | "cancel";
   className?: string;
   children?: any;
   onClick?: any;

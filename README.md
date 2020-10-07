@@ -1,9 +1,20 @@
-React Angled
-======
+# React Angled
 
-Another React component library but *better*, __simpler__, **_smoother_**.
+Just another React component library.
 
- #### Feel the *buttery* satisfaction every time you see every day components.
+<h2 ><b>but</b></h2>
+
+<br/>
+<br/>
+<br/>
+
+<p align="center"><i>better</i></p>
+<p align="center" >|</p>
+<p align="center"><b>simpler</b></p>
+<p align="center" >|</p>
+<p align="center"><i><b>smoother</b></i></p>
+<p align="center" >|</p>
+<h3 align="center"><b>Feel the <i>buttery</i> satisfaction every time you see every day components.</b></h3>
 
 <p align="center" >|</p>
 <p align="center" >
@@ -16,9 +27,13 @@ Another React component library but *better*, __simpler__, **_smoother_**.
 </p>
 <p align="center" >|</p>
  
- ## Featuring:
- * Inputs
- * Buttons
- * Alerts
- * Skeleton
+<br/>
+<br/>
+<br/>
 
+<h2>Featuring:</h2>
+
+- Inputs
+- Buttons
+- Alerts
+- Skeleton
