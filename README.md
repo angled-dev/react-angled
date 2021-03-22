@@ -33,3 +33,5 @@ Just another React component library.
 - Buttons
 - Alerts
 - Skeleton
+
+Made by <a href="https://github.com/beeinger">beeinger</a> and <a href="https://github.com/mikjakbiak">mikjakbiak</a>
